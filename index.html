@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Music Habits · Monthly Top Artists</title>
+    <style>
+      :root {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #0f172a;
+        background: #f8fafc;
+      }
+      body {
+        margin: 0;
+        padding: 1.5rem;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .month-picker {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      button {
+        border: 1px solid #cbd5f5;
+        background: white;
+        border-radius: 999px;
+        padding: 0.35rem 0.75rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      #chart {
+        min-height: 420px;
+        border: 1px solid #cbd5f5;
+        border-radius: 0.75rem;
+        padding: 0.5rem;
+        background: white;
+      }
+      #legend {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 0.5rem 1rem;
+      }
+      #legend li {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.95rem;
+      }
+      #legend span {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      footer {
+        font-size: 0.9rem;
+        color: #475467;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .history-note {
+        color: #94a3b8;
+        font-size: 0.85rem;
+      }
+      .home-link {
+        color: #0f172a;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .home-link:hover {
+        text-decoration: underline;
+      }
+      .empty-state {
+        border: 1px dashed #cbd5f5;
+        border-radius: 0.75rem;
+        padding: 2rem;
+        text-align: center;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <div>
+          <p style="margin: 0; color: #475467; font-size: 0.9rem;">MusicHabits</p>
+          <h1 style="margin: 0.2rem 0;">Monthly Top Artists</h1>
+          <p style="margin: 0; color: #475467;">Bubble size = playcount. Use the arrows (or ← / → keys) to move through months.</p>
+        </div>
+        <div class="month-picker">
+          <button id="prev-month" aria-label="Previous month">←</button>
+          <strong id="month-label">No data</strong>
+          <button id="next-month" aria-label="Next month">→</button>
+        </div>
+      </header>
+
+      <section id="chart" role="img" aria-label="Top artists bubble chart"></section>
+      <ul id="legend"></ul>
+      <div id="empty-state" class="empty-state hidden">
+        <p>No listening history yet. Run the workflow to generate your first snapshot.</p>
+      </div>
+      <footer>
+        <span id="updated-label"></span>
+        <a class="home-link" href="https://simonwanna.github.io">Back to simonwanna.github.io</a>
+      </footer>
+    </main>
+
+    <script>
+      window.musicHabitsData = {
+        snapshots: [{"month_key": "2025-11", "month_label": "November 2025", "generated_at": "2025-11-12T22:13:28.592064+00:00", "artists": [{"name": "Daniel Adams-Ray", "playcount": 15, "image_url": "", "url": "https://www.last.fm/music/Daniel+Adams-Ray", "rank": 1, "color": "#636EFA"}, {"name": "Saint Levant", "playcount": 9, "image_url": "", "url": "https://www.last.fm/music/Saint+Levant", "rank": 2, "color": "#EF553B"}, {"name": "Kanye West", "playcount": 8, "image_url": "", "url": "https://www.last.fm/music/Kanye+West", "rank": 3, "color": "#00CC96"}, {"name": "Oskar Linnros", "playcount": 7, "image_url": "", "url": "https://www.last.fm/music/Oskar+Linnros", "rank": 4, "color": "#AB63FA"}, {"name": "Ludovico Einaudi", "playcount": 6, "image_url": "", "url": "https://www.last.fm/music/Ludovico+Einaudi", "rank": 5, "color": "#FFA15A"}, {"name": "Lil Wayne", "playcount": 5, "image_url": "", "url": "https://www.last.fm/music/+noredirect/Lil+Wayne", "rank": 6, "color": "#19D3F3"}, {"name": "Naïka", "playcount": 5, "image_url": "", "url": "https://www.last.fm/music/Na%C3%AFka", "rank": 7, "color": "#FF6692"}, {"name": "50 Cent", "playcount": 4, "image_url": "", "url": "https://www.last.fm/music/50+Cent", "rank": 8, "color": "#B6E880"}, {"name": "Erik Lundin", "playcount": 4, "image_url": "", "url": "https://www.last.fm/music/Erik+Lundin", "rank": 9, "color": "#FF97FF"}, {"name": "Mike Will Made-It", "playcount": 4, "image_url": "", "url": "https://www.last.fm/music/Mike+Will+Made-It", "rank": 10, "color": "#FECB52"}, {"name": "Stormzy", "playcount": 4, "image_url": "", "url": "https://www.last.fm/music/Stormzy", "rank": 11, "color": "rgb(136, 204, 238)"}, {"name": "Bugzy Malone", "playcount": 3, "image_url": "", "url": "https://www.last.fm/music/Bugzy+Malone", "rank": 12, "color": "rgb(204, 102, 119)"}, {"name": "Darin", "playcount": 3, "image_url": "", "url": "https://www.last.fm/music/Darin", "rank": 13, "color": "rgb(221, 204, 119)"}, {"name": "NF", "playcount": 3, "image_url": "", "url": "https://www.last.fm/music/NF", "rank": 14, "color": "rgb(17, 119, 51)"}, {"name": "¥$", "playcount": 2, "image_url": "", "url": "https://www.last.fm/music/%C2%A5$", "rank": 15, "color": "rgb(51, 34, 136)"}]}],
+        hasData: true
+      };
+    </script>
+    <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+    <script>
+      (() => {
+        const { snapshots = [], hasData = false } = window.musicHabitsData || {};
+        const chartEl = document.getElementById("chart");
+        const legendEl = document.getElementById("legend");
+        const monthLabelEl = document.getElementById("month-label");
+        const updatedLabelEl = document.getElementById("updated-label");
+        const emptyStateEl = document.getElementById("empty-state");
+        const monthPickerEl = document.querySelector(".month-picker");
+        let activeIndex = Math.max(0, snapshots.length - 1);
+
+        const buildTrace = (artists) => {
+          if (!artists.length) {
+            return [];
+          }
+          const x = artists.map((_, idx) => idx + 1);
+          const bubbleSizes = artists.map((artist) => Math.max(artist.playcount, 1));
+          const maxSize = Math.max(...bubbleSizes, 1);
+          const desiredMaxMarkerPx = 120;
+          const sizeRef = (2 * maxSize) / (desiredMaxMarkerPx ** 2) || 1;
+
+          return [
+            {
+              type: "scatter",
+              mode: "markers",
+              x,
+              y: artists.map((artist) => artist.playcount),
+              text: artists.map((artist) => artist.name),
+              marker: {
+                size: bubbleSizes,
+                color: artists.map((artist) => artist.color),
+                sizemode: "area",
+                sizeref: sizeRef,
+                sizemin: 18,
+                line: { width: 2, color: "#0f172a" },
+                opacity: 0.9
+              },
+              hovertemplate: "<b>%{text}</b><br>%{y} plays<extra></extra>"
+            }
+          ];
+        };
+
+        const renderLegend = (artists) => {
+          legendEl.innerHTML = artists
+            .map(
+              (artist) => `
+            <li>
+              <span style="background:${artist.color}"></span>
+              ${artist.name}
+            </li>`
+            )
+            .join("");
+        };
+
+        const renderMonth = (index) => {
+          if (!snapshots.length) {
+            chartEl.classList.add("hidden");
+            legendEl.classList.add("hidden");
+            monthPickerEl.classList.add("hidden");
+            emptyStateEl.classList.remove("hidden");
+            return;
+          }
+          chartEl.classList.remove("hidden");
+          legendEl.classList.remove("hidden");
+          monthPickerEl.classList.remove("hidden");
+          emptyStateEl.classList.add("hidden");
+
+          const snapshot = snapshots[index];
+          const artists = snapshot.artists;
+          const axisPositions = artists.map((_, idx) => idx + 1);
+          const rankLabels = artists.map((artist, idx) => artist.rank || idx + 1);
+          const traces = buildTrace(artists);
+          Plotly.react(
+            chartEl,
+            traces,
+            {
+              margin: { t: 20, r: 20, b: 40, l: 40 },
+              paper_bgcolor: "rgba(0,0,0,0)",
+              plot_bgcolor: "rgba(0,0,0,0)",
+              showlegend: false,
+              xaxis: {
+                showgrid: false,
+                zeroline: false,
+                title: "",
+                tickvals: axisPositions,
+                ticktext: rankLabels,
+                autorange: "reversed"
+              },
+              yaxis: { title: "Playcount", zeroline: false, gridcolor: "rgba(15,23,42,0.08)" }
+            },
+            { displayModeBar: false, responsive: true }
+          );
+
+          monthLabelEl.textContent = snapshot.month_label;
+          const updatedDate = new Date(snapshot.generated_at);
+          updatedLabelEl.textContent = `Updated ${updatedDate.toLocaleDateString(undefined, {
+            month: "short",
+            day: "numeric",
+            year: "numeric"
+          })}`;
+          renderLegend(artists);
+        };
+
+        const shiftMonth = (direction) => {
+          if (!snapshots.length) {
+            return;
+          }
+          activeIndex = (activeIndex + direction + snapshots.length) % snapshots.length;
+          renderMonth(activeIndex);
+        };
+
+        document.getElementById("prev-month").addEventListener("click", () => shiftMonth(-1));
+        document.getElementById("next-month").addEventListener("click", () => shiftMonth(1));
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowLeft") shiftMonth(-1);
+          if (event.key === "ArrowRight") shiftMonth(1);
+        });
+
+        if (hasData) {
+          renderMonth(activeIndex);
+        } else {
+          renderMonth(0);
+        }
+      })();
+    </script>
+  </body>
+</html>
