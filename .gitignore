@@ -1,0 +1,21 @@
+# Generated files
+**/.cache
+**/__pycache__
+**/.pytest_cache/
+**/*.pyc
+**/*.log
+
+# Development environment
+.venv
+.env
+.vscode
+
+# Git files
+.git
+
+# Notebooks and markdown files
+spec.md
+test.ipynb
+
+# Site output
+site/
