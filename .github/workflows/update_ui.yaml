@@ -1,0 +1,62 @@
+name: Publish Listening History
+
+on:
+  schedule:
+    - cron: '0 4 14,28 * *' # Run at 04:00 UTC on the 14th and 28th
+  workflow_dispatch:
+  # Trigger on push to main
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install .
+
+      - name: Restore previous listening history
+        shell: bash
+        run: |
+          mkdir -p site
+          if git ls-remote --exit-code origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages
+            if git cat-file -e origin/gh-pages:listening_history.csv 2>/dev/null; then
+              git show origin/gh-pages:listening_history.csv > site/listening_history.csv
+            fi
+          fi
+
+      - name: Build UI
+        env:
+          LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
+          LASTFM_USER: ${{ secrets.LASTFM_USER }}
+        run: python -m app.main
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: site
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: site
+          enable_jekyll: false
