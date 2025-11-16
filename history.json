@@ -2,12 +2,12 @@
   {
     "month_key": "2025-11",
     "month_label": "November 2025",
-    "generated_at": "2025-11-16T09:46:01.813927+00:00",
+    "generated_at": "2025-11-16T09:58:45.287959+00:00",
     "artists": [
       {
         "name": "Daniel Adams-Ray",
         "playcount": 15,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/Daniel+Adams-Ray",
         "rank": 1,
         "color": "#636EFA"
@@ -15,7 +15,7 @@
       {
         "name": "Saint Levant",
         "playcount": 12,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/Saint+Levant",
         "rank": 2,
         "color": "#EF553B"
@@ -23,7 +23,7 @@
       {
         "name": "Kanye West",
         "playcount": 8,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/Kanye+West",
         "rank": 3,
         "color": "#00CC96"
@@ -31,7 +31,7 @@
       {
         "name": "NF",
         "playcount": 8,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/NF",
         "rank": 4,
         "color": "#AB63FA"
@@ -39,7 +39,7 @@
       {
         "name": "Oskar Linnros",
         "playcount": 8,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/Oskar+Linnros",
         "rank": 5,
         "color": "#FFA15A"
@@ -47,7 +47,7 @@
       {
         "name": "Ludovico Einaudi",
         "playcount": 6,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/Ludovico+Einaudi",
         "rank": 6,
         "color": "#19D3F3"
@@ -55,7 +55,7 @@
       {
         "name": "Lil Wayne",
         "playcount": 5,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/+noredirect/Lil+Wayne",
         "rank": 7,
         "color": "#FF6692"
@@ -63,7 +63,7 @@
       {
         "name": "Na\u00efka",
         "playcount": 5,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/Na%C3%AFka",
         "rank": 8,
         "color": "#B6E880"
@@ -71,7 +71,7 @@
       {
         "name": "50 Cent",
         "playcount": 4,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/50+Cent",
         "rank": 9,
         "color": "#FF97FF"
@@ -79,7 +79,7 @@
       {
         "name": "Erik Lundin",
         "playcount": 4,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/Erik+Lundin",
         "rank": 10,
         "color": "#FECB52"
@@ -87,7 +87,7 @@
       {
         "name": "Mike Will Made-It",
         "playcount": 4,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/Mike+Will+Made-It",
         "rank": 11,
         "color": "rgb(136, 204, 238)"
@@ -95,7 +95,7 @@
       {
         "name": "Stormzy",
         "playcount": 4,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/Stormzy",
         "rank": 12,
         "color": "rgb(204, 102, 119)"
@@ -103,7 +103,7 @@
       {
         "name": "Bugzy Malone",
         "playcount": 3,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/Bugzy+Malone",
         "rank": 13,
         "color": "rgb(221, 204, 119)"
@@ -111,7 +111,7 @@
       {
         "name": "Darin",
         "playcount": 3,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/Darin",
         "rank": 14,
         "color": "rgb(17, 119, 51)"
@@ -119,7 +119,7 @@
       {
         "name": "\u00a5$",
         "playcount": 2,
-        "image_url": "",
+        "image_url": null,
         "url": "https://www.last.fm/music/%C2%A5$",
         "rank": 15,
         "color": "rgb(51, 34, 136)"
