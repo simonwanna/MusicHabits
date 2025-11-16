@@ -1,5 +1,5 @@
 # MusicHabits :notes:
-Small project with visuals, CI/CD stuff and some vibe. Takes your monthly Spotify stats --> Plotly bubbles --> GitHub Pages.
+Small project with visuals, CI/CD stuff and some vibe. Takes your Spotify stats in the end of each month --> Plotly bubbles --> GitHub Pages.
 
 ![UI Screenshot](assets/ui.png)
 

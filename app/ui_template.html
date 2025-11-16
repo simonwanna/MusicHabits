@@ -41,6 +41,10 @@
         font-size: 1rem;
         cursor: pointer;
       }
+      .month-picker button:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
       #chart {
         min-height: 420px;
         border: 1px solid #cbd5f5;
@@ -122,6 +126,8 @@
       <footer>
         <span id="updated-label"></span>
         <a class="home-link" href="https://simonwanna.github.io">Back to simonwanna.github.io</a>
+        <span>or</span>
+        <a class="home-link" href="https://github.com/simonwanna/MusicHabits">view GitHub project</a>
       </footer>
     </main>
 
@@ -141,6 +147,8 @@
         const updatedLabelEl = document.getElementById("updated-label");
         const emptyStateEl = document.getElementById("empty-state");
         const monthPickerEl = document.querySelector(".month-picker");
+        const prevButton = document.getElementById("prev-month");
+        const nextButton = document.getElementById("next-month");
         let activeIndex = Math.max(0, snapshots.length - 1);
 
         const buildTrace = (artists) => {
@@ -186,12 +194,19 @@
             .join("");
         };
 
+        const updateNavButtons = () => {
+          const hasSnapshots = snapshots.length > 0;
+          prevButton.disabled = !hasSnapshots || activeIndex <= 0;
+          nextButton.disabled = !hasSnapshots || activeIndex >= snapshots.length - 1;
+        };
+
         const renderMonth = (index) => {
           if (!snapshots.length) {
             chartEl.classList.add("hidden");
             legendEl.classList.add("hidden");
             monthPickerEl.classList.add("hidden");
             emptyStateEl.classList.remove("hidden");
+            updateNavButtons();
             return;
           }
           chartEl.classList.remove("hidden");
@@ -233,18 +248,23 @@
             year: "numeric"
           })}`;
           renderLegend(artists);
+          updateNavButtons();
         };
 
         const shiftMonth = (direction) => {
           if (!snapshots.length) {
             return;
           }
-          activeIndex = (activeIndex + direction + snapshots.length) % snapshots.length;
+          const nextIndex = activeIndex + direction;
+          if (nextIndex < 0 || nextIndex >= snapshots.length) {
+            return;
+          }
+          activeIndex = nextIndex;
           renderMonth(activeIndex);
         };
 
-        document.getElementById("prev-month").addEventListener("click", () => shiftMonth(-1));
-        document.getElementById("next-month").addEventListener("click", () => shiftMonth(1));
+        prevButton.addEventListener("click", () => shiftMonth(-1));
+        nextButton.addEventListener("click", () => shiftMonth(1));
         document.addEventListener("keydown", (event) => {
           if (event.key === "ArrowLeft") shiftMonth(-1);
           if (event.key === "ArrowRight") shiftMonth(1);

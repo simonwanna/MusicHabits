@@ -24,11 +24,6 @@ class MonthlySnapshot:
     artists: List[ArtistStat]
 
 
-def _extract_image(artist_payload: Dict[str, Any]) -> Optional[str]:
-    # TODO: implement fetching from Spotipy
-    return
-
-
 def process_data(raw_data: Dict[str, Any], run_timestamp: Optional[datetime] = None) -> MonthlySnapshot:
     """
     Turn the Last.fm payload into a normalized monthly snapshot.
@@ -62,7 +57,7 @@ def process_data(raw_data: Dict[str, Any], run_timestamp: Optional[datetime] = N
             ArtistStat(
                 name=name,
                 playcount=playcount,
-                image_url="",  # TODO: implement fetching from Spotipy
+                image_url=None,
                 url=artist_payload.get("url"),
                 rank=rank,
             )

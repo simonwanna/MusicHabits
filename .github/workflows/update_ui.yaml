@@ -2,7 +2,7 @@ name: Publish Listening History
 
 on:
   schedule:
-    - cron: '0 4 14,28 * *' # Run at 04:00 UTC on the 14th and 28th
+    - cron: '0 4 28 * *' # Run at 04:00 UTC on the 28th
   workflow_dispatch:
   # Trigger on push to main
   push:
