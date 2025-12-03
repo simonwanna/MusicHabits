@@ -1,5 +1,8 @@
 # MusicHabits :notes:
+[![build](https://github.com/simonwanna/MusicHabits/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/simonwanna/MusicHabits/actions/workflows/pages/pages-build-deployment)
+
 Small project with visuals, CI/CD stuff and some vibe. Takes your Spotify stats in the end of each month --> Plotly bubbles --> GitHub Pages.
+Visit [MusicHabits](https://simonwanna.github.io/MusicHabits/) to see the result.
 
 ![UI Screenshot](assets/ui.png)
 
