@@ -129,127 +129,127 @@
   {
     "month_key": "2025-12",
     "month_label": "December 2025",
-    "generated_at": "2025-12-03T18:06:00.800355+00:00",
+    "generated_at": "2025-12-28T04:25:29.420494+00:00",
     "artists": [
       {
-        "name": "NF",
+        "name": "Noel Kharman",
+        "playcount": 42,
+        "image_url": null,
+        "url": "https://www.last.fm/music/Noel+Kharman",
+        "rank": 1,
+        "color": "rgb(51, 34, 136)"
+      },
+      {
+        "name": "Zeyne",
+        "playcount": 30,
+        "image_url": null,
+        "url": "https://www.last.fm/music/Zeyne",
+        "rank": 2,
+        "color": "#FF97FF"
+      },
+      {
+        "name": "Elyanna",
         "playcount": 28,
         "image_url": null,
-        "url": "https://www.last.fm/music/NF",
-        "rank": 1,
-        "color": "#636EFA"
-      },
-      {
-        "name": "Saint Levant",
-        "playcount": 24,
-        "image_url": null,
-        "url": "https://www.last.fm/music/Saint+Levant",
-        "rank": 2,
-        "color": "#EF553B"
-      },
-      {
-        "name": "Kanye West",
-        "playcount": 22,
-        "image_url": null,
-        "url": "https://www.last.fm/music/Kanye+West",
+        "url": "https://www.last.fm/music/Elyanna",
         "rank": 3,
-        "color": "#B6E880"
+        "color": "#FECB52"
       },
       {
         "name": "Daniel Adams-Ray",
-        "playcount": 21,
+        "playcount": 24,
         "image_url": null,
         "url": "https://www.last.fm/music/Daniel+Adams-Ray",
         "rank": 4,
         "color": "#00CC96"
       },
       {
-        "name": "Na\u00efka",
-        "playcount": 16,
+        "name": "Kanye West",
+        "playcount": 22,
         "image_url": null,
-        "url": "https://www.last.fm/music/Na%C3%AFka",
+        "url": "https://www.last.fm/music/Kanye+West",
         "rank": 5,
-        "color": "#AB63FA"
+        "color": "#B6E880"
+      },
+      {
+        "name": "Saint Levant",
+        "playcount": 21,
+        "image_url": null,
+        "url": "https://www.last.fm/music/Saint+Levant",
+        "rank": 6,
+        "color": "#EF553B"
       },
       {
         "name": "Zeina",
-        "playcount": 14,
+        "playcount": 21,
         "image_url": null,
         "url": "https://www.last.fm/music/Zeina",
-        "rank": 6,
-        "color": "rgb(51, 34, 136)"
-      },
-      {
-        "name": "Mike Will Made-It",
-        "playcount": 13,
-        "image_url": null,
-        "url": "https://www.last.fm/music/Mike+Will+Made-It",
         "rank": 7,
-        "color": "#FFA15A"
+        "color": "rgb(221, 204, 119)"
       },
       {
-        "name": "Elyanna",
+        "name": "Fadel Chaker",
+        "playcount": 17,
+        "image_url": null,
+        "url": "https://www.last.fm/music/+noredirect/Fadel+Chaker",
+        "rank": 8,
+        "color": "#636EFA"
+      },
+      {
+        "name": "Adam",
         "playcount": 12,
         "image_url": null,
-        "url": "https://www.last.fm/music/Elyanna",
-        "rank": 8,
-        "color": "#FECB52"
-      },
-      {
-        "name": "50 Cent",
-        "playcount": 10,
-        "image_url": null,
-        "url": "https://www.last.fm/music/50+Cent",
+        "url": "https://www.last.fm/music/Adam",
         "rank": 9,
         "color": "#19D3F3"
       },
       {
-        "name": "Oskar Linnros",
-        "playcount": 10,
+        "name": "Genocide",
+        "playcount": 12,
         "image_url": null,
-        "url": "https://www.last.fm/music/Oskar+Linnros",
+        "url": "https://www.last.fm/music/Genocide",
         "rank": 10,
-        "color": "#FF97FF"
-      },
-      {
-        "name": "Erik Lundin",
-        "playcount": 8,
-        "image_url": null,
-        "url": "https://www.last.fm/music/Erik+Lundin",
-        "rank": 11,
-        "color": "#FF6692"
-      },
-      {
-        "name": "Ludovico Einaudi",
-        "playcount": 7,
-        "image_url": null,
-        "url": "https://www.last.fm/music/Ludovico+Einaudi",
-        "rank": 12,
-        "color": "rgb(136, 204, 238)"
-      },
-      {
-        "name": "Matt Hansen",
-        "playcount": 7,
-        "image_url": null,
-        "url": "https://www.last.fm/music/Matt+Hansen",
-        "rank": 13,
         "color": "rgb(204, 102, 119)"
       },
       {
-        "name": "Dana Salah",
-        "playcount": 6,
+        "name": "Ludovico Einaudi",
+        "playcount": 12,
         "image_url": null,
-        "url": "https://www.last.fm/music/Dana+Salah",
-        "rank": 14,
-        "color": "rgb(221, 204, 119)"
+        "url": "https://www.last.fm/music/Ludovico+Einaudi",
+        "rank": 11,
+        "color": "rgb(136, 204, 238)"
       },
       {
-        "name": "Zeyne",
-        "playcount": 6,
+        "name": "Nancy Ajram",
+        "playcount": 12,
         "image_url": null,
-        "url": "https://www.last.fm/music/Zeyne",
-        "rank": 15,
+        "url": "https://www.last.fm/music/Nancy+Ajram",
+        "rank": 12,
         "color": "rgb(17, 119, 51)"
+      },
+      {
+        "name": "Malek North",
+        "playcount": 11,
+        "image_url": null,
+        "url": "https://www.last.fm/music/Malek+North",
+        "rank": 13,
+        "color": "#FF6692"
+      },
+      {
+        "name": "Mike Will Made-It",
+        "playcount": 11,
+        "image_url": null,
+        "url": "https://www.last.fm/music/Mike+Will+Made-It",
+        "rank": 14,
+        "color": "#FFA15A"
+      },
+      {
+        "name": "Na\u00efka",
+        "playcount": 9,
+        "image_url": null,
+        "url": "https://www.last.fm/music/Na%C3%AFka",
+        "rank": 15,
+        "color": "#AB63FA"
       }
     ]
   }
